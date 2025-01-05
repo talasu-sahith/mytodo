@@ -21,7 +21,9 @@ const Taskspace = () => {
       setTask((prev) => {
         console.log(prev);
         let newtask = prev.map((x) => {
-          return x.id === todo.id ? { ...x, person: todo.person } : x;
+          return x.id === todo.id
+            ? { ...x, person: todo.person, task: todo.task }
+            : x;
         });
         return newtask;
       });

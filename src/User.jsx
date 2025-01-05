@@ -4,7 +4,9 @@ import { useGlobalContext } from "./context";
 const User = () => {
   const { users, dispatch } = useGlobalContext();
   return (
-    <div style={{ maxWidth: "200px", margin: "2rem auto" }}>
+    <div
+      style={{ maxWidth: "200px", margin: "2rem auto", textAlign: "center" }}
+    >
       <ul>
         {users.map((item) => (
           <div
