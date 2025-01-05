@@ -40,6 +40,7 @@ const Taskspace = () => {
         handleEdit={handleEdit}
         todo={todo}
         task={task}
+        setTodo={setTodo}
       />
       <div className="todolist">
         <Todolist todos={task} handleEdit={handleEdit} />

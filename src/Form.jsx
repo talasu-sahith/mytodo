@@ -1,6 +1,13 @@
 import Button from "react-bootstrap/Button";
 import { Form } from "react-bootstrap";
-const Forum = ({ handlesubmit, handleChange, handleEdit, todo, task }) => {
+const Forum = ({
+  handlesubmit,
+  handleChange,
+  handleEdit,
+  todo,
+  task,
+  setTodo,
+}) => {
   return (
     <>
       <Form onSubmit={handlesubmit} className="form1">
@@ -24,10 +31,19 @@ const Forum = ({ handlesubmit, handleChange, handleEdit, todo, task }) => {
             onChange={handleChange}
           ></Form.Control>
         </Form.Group>
-
-        <Button className="btn-submit" type="submit">
-          Submit
-        </Button>
+        <div style={{ display: "flex", justifyContent: "right" }}>
+          <Button
+            className="btn-submit"
+            style={{ marginRight: "1rem" }}
+            type="button"
+            onClick={() => setTodo({ id: "", task: "", person: "" })}
+          >
+            Reset
+          </Button>
+          <Button className="btn-submit" type="submit">
+            Submit
+          </Button>
+        </div>
       </Form>
     </>
   );
