@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Forum from "./Form";
 import { nanoid } from "nanoid";
 import Todolist from "./Todolist";
+import { useGlobalContext } from "./context";
 const Taskspace = () => {
+  const { currentuser, currentdata } = useGlobalContext();
   const [todo, setTodo] = useState({ id: "", task: "", person: "" });
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState(currentdata);
   // useEffect(() => {
   //   const todos = [];
   // }, []);
@@ -37,9 +39,9 @@ const Taskspace = () => {
       <Forum
         handleChange={handleChange}
         handlesubmit={handlesubmit}
-        handleEdit={handleEdit}
         todo={todo}
         task={task}
+        cuser={currentuser}
         setTodo={setTodo}
       />
       <div className="todolist">

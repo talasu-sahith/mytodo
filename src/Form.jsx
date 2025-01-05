@@ -1,13 +1,9 @@
 import Button from "react-bootstrap/Button";
 import { Form } from "react-bootstrap";
-const Forum = ({
-  handlesubmit,
-  handleChange,
-  handleEdit,
-  todo,
-  task,
-  setTodo,
-}) => {
+import { useGlobalContext } from "./context";
+import { Link } from "react-router-dom";
+const Forum = ({ handlesubmit, handleChange, todo, task, cuser, setTodo }) => {
+  const { dispatch } = useGlobalContext();
   return (
     <>
       <Form onSubmit={handlesubmit} className="form1">
@@ -40,6 +36,18 @@ const Forum = ({
           >
             Reset
           </Button>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Button
+              className="btn-submit"
+              style={{ marginRight: "1rem" }}
+              type="button"
+              onClick={() =>
+                dispatch({ type: "NavigateHome", payload: { task, cuser } })
+              }
+            >
+              Home
+            </Button>
+          </Link>
           <Button className="btn-submit" type="submit">
             Submit
           </Button>

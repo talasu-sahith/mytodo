@@ -78,3 +78,12 @@ nav {
   border-color: transparent;
   cursor: pointer;
 }
+.btn-user {
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+.btn-user:hover {
+  color: slateblue;
+  text-decoration: underline;
+}

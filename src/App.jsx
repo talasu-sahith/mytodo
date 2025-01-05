@@ -1,4 +1,6 @@
 import Taskspace from "./Taskspace";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Users from "./Users";
 
 function App() {
   return (
@@ -6,7 +8,12 @@ function App() {
       <nav>
         <h2>This is Todo App</h2>
       </nav>
-      <Taskspace />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Users />} />
+          <Route path="/taskspace" element={<Taskspace />} />
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }
